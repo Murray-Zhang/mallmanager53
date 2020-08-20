@@ -42,6 +42,7 @@ export default {
             }
           } = res.data
           if (status === 200) {
+            localStorage.setItem('tokan', data.token)
             // 跳转home
             this.$router.push({
               name: 'home'
