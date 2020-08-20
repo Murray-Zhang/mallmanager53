@@ -44,8 +44,14 @@
         </template>
       </el-table-column>
       <el-table-column
-        prop="mg_state"
         label="用户状态">
+        <template slot-scope="usersList">
+          <el-switch
+            v-model="usersList.row.mg_state"
+            active-color="#13ce66"
+            inactive-color="#ff4949">
+          </el-switch>
+        </template>
       </el-table-column>
       <el-table-column
         prop="address"
