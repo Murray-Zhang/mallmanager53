@@ -54,8 +54,12 @@
         </template>
       </el-table-column>
       <el-table-column
-        prop="address"
         label="操作">
+        <template slot-scope="usersList">
+          <el-button type="primary" plain="false" size="small" icon="el-icon-edit" circle></el-button>
+          <el-button type="success" plain="false" size="small" icon="el-icon-check" circle></el-button>
+          <el-button type="danger"  plain="false" size="small" icon="el-icon-delete" circle></el-button>
+        </template>
       </el-table-column>
     </el-table>
   </el-card>
