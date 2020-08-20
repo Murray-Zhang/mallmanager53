@@ -43,9 +43,9 @@ export default {
           } = res.data
           if (status === 200) {
             // 跳转home
-            // this.$route.push({
-            //   name: 'home'
-            // })
+            this.$router.push({
+              name: 'home'
+            })
             // 提示成功
             this.$message({
               message: msg,
