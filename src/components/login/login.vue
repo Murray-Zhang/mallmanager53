@@ -33,7 +33,6 @@ export default {
     handleLogin: function () {
       this.$http.post('login', this.formData)
         .then((res) => {
-          console.log(res)
           const {
             data,
             meta: {
@@ -42,7 +41,7 @@ export default {
             }
           } = res.data
           if (status === 200) {
-            localStorage.setItem('tokan', data.token)
+            localStorage.setItem('token', data.token)
             // 跳转home
             this.$router.push({
               name: 'home'

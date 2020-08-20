@@ -91,7 +91,15 @@
 
 <script>
 export default {
-  name: 'home'
+  beforeCreate: function () {
+    const token = localStorage.getItem('token')
+    if (!token) {
+      this.$router.push({name: 'login'})
+    }
+  }
+  // 获取token
+  // if token 有 -> 继续渲染组件
+  // token 没有-> 登录
 }
 </script>
 
