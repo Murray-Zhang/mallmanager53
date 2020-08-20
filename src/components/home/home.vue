@@ -12,7 +12,7 @@
           </el-col>
           <el-col :span="4">
             <div class="grid-content bg-purple">
-              <a href="" class="loginout">退出</a>
+              <a v-on:click.prevent="handleSignout" class="loginout">退出</a>
             </div>
           </el-col>
         </el-row>
@@ -94,6 +94,16 @@ export default {
   beforeCreate: function () {
     const token = localStorage.getItem('token')
     if (!token) {
+      this.$router.push({name: 'login'})
+    }
+  },
+  methods: {
+    handleSignout: function () {
+      localStorage.clear()
+      this.$message({
+        message: '退出成功',
+        type: 'success'
+      })
       this.$router.push({name: 'login'})
     }
   }
